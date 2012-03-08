@@ -18,6 +18,8 @@ Install [swank-clojure](https://github.com/technomancy/swank-clojure) using lein
 
 and get [clojure-mode](https://github.com/technomancy/clojure-mode) to a directory in your load-path.
 
+<script src="https://gist.github.com/1998186.js"> </script>
+
 Download the contrib files you are interested from [here](https://github.com/technomancy/slime/tree/master/contrib) to your load-path. This is a Slime fork maintained by the same person as clojure-mode, so it's guaranteed to keep working.
 
 <script src="https://gist.github.com/1998059.js"> </script>

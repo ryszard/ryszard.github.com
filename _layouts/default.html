@@ -1,29 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>{{ page.title }}</title>
+<title>Ric's Blog - {{ page.title }}</title>
+<link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<meta charset="utf-8" />
+<meta property="og:title" content="{{ page.title }}" />
+<meta property="og:type" content="blog" />
+<meta property="og:url" content="{{ page.url }}" />
+<meta property="og:image" content="" />
+<meta property="og:site_name" content="Ric&#039;s Blog" />
+<meta property="fb:admins" content="507195417" />
 </head>
 
 <body>
-<h1>{{ page.title }}</h1>
+  <div class="page-header">
+    <a href="/"><h1>Ric's Blog</h1></a>
+  </div>
 
-{{ content }}
-{% if page.comments %}
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'ryszard'; // required: replace example with your forum shortname
+<div class="container">
+  <div class="page-header">
+    <h1>{{ page.title }}</h1>
+  </div>
+  <div class="row">
+    <div class="span2">
+      <a href="{{ post.url }}">
+	<h6 style="padding-top: 1em;">{{ page.date | date_to_long_string }}</h6>
+      </a>
+    </div>
+    <div class="span6">
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
 
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-{% endif %}
+      {{ content }}
 
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+	var disqus_shortname = 'ryszard'; // required: replace example with your forum shortname
+	
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	 })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+    <div class="span4">
+    </div>
+  </div>
+</div>
 </body>
 </html>
